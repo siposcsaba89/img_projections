@@ -8,5 +8,9 @@ find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
 
 add_executable(ipm_projection ipm_projection.cpp)
-target_link_libraries(ipm_projection PRIVATE ${OpenCV_LIBRARIES} Eigen3::Eigen)
+target_link_libraries(ipm_projection PRIVATE ${OpenCV_LIBRARIES} ::Eigen3)
+
+
+add_executable(calib_converter calib_converter.cpp)
+target_link_libraries(calib_converter PRIVATE ${OpenCV_LIBRARIES} ::Eigen3)
 
